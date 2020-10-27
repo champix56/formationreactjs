@@ -1,14 +1,35 @@
-import './App.css';
-import Button from './components/Button/Button'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Title from './components/Title/Title';
+import Navbar from './components/Navbar/Navbar';
+import Viewer from './components/Viewer/Viewer';
+import Footer from './components/Footer/Footer';
 
-function App() {
-  const maValue='124';
-  return (
-    <div className="App">
-      <Button text="Voici le corps du bouton" backgroundColor="skyblue" color="white"/>
-      <Button text="default" onClick={()=>{console.log(maValue)}}/>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state={};
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Title></Title>
+        <Navbar></Navbar>
+        <div>
+          <Viewer></Viewer>
+          {/*<Edition></Edition>*/}
+        </div>
+        <Footer></Footer>
+      </div>
+    );
+  }
 }
+
+
+App.propTypes = {
+
+};
+
 
 export default App;
