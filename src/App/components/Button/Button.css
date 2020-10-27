@@ -5,5 +5,9 @@
     margin: 2px;
     display: inline-block;
     /*background-color: aqua;*/
+   /* box-shadow: 10px 10px 25px grey;*/
+}
+
+.Button.clicked{
     box-shadow: 10px 10px 25px grey;
 }
