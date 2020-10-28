@@ -8,11 +8,14 @@ import Edition from './components/Edition/Edition';
 import Footer from './components/Footer/Footer';
 import MainView from './components/MainView/MainView';
 import {Button as Button2} from 'react-bootstrap';
+// import {REST_SRV_ADR} from './config/config';
+
+const REST_SRV_ADR='http://localhost:5644';
 
 const initialState = {
   meme: {
     img: '',
-    text: { x: 0, y: 0, value: '' },
+    text: { x: 20, y: 50, value: 'DEMAT BREIZH' },
   },
   imgs:['img1.jpg', 'img2.jpg']
 }
@@ -21,6 +24,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = initialState;
+  }
+
+  componentDidMount = ()=>{
+    fetch(REST_SRV_ADR + '/memes').then(f=>f.json()).then(o=>this.setState({memes:o}))
+    fetch(REST_SRV_ADR + '/imgs').then(f=>f.json()).then(o=>this.setState({imgs:o}))
   }
 
   render() {
@@ -47,8 +55,8 @@ class App extends Component {
         <Title></Title>
         <Navbar></Navbar>
         <MainView>
-          <Viewer></Viewer>
-          <Edition></Edition>
+          <Viewer meme={this.state.meme}></Viewer>
+          <Edition meme={this.state.meme}></Edition>
         </MainView>
         <Footer></Footer>
       </div>

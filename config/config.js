@@ -1,0 +1,1 @@
+export const REST_SRV_ADR='http://localhost:5644';

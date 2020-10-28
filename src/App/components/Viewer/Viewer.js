@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Viewer.module.scss';
 
-const Viewer = () => (
+const Viewer = (props) => (
   <div className={styles.Viewer} data-testid="Viewer">
-    Viewer Component
+    {JSON.stringify(props.meme)}
   </div>
 );
 
