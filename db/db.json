@@ -2,7 +2,7 @@
   "memes": [
     {
       "id": 1,
-      "url": "img1.jpg",
+      "url": "pere.jpg",
       "text": {
         "x": 0,
         "y": 0,
@@ -22,31 +22,19 @@
   "imgs": [
     {
       "id": 1,
-      "url": "img1.jpg",
+      "url": "pere.jpg",
       "w": 512,
       "h": 512
     },
     {
       "id": 2,
-      "url": "img2.jpg",
+      "url": "fun.jpg",
       "w": 512,
       "h": 512
     },
     {
       "id": 3,
-      "url": "img3.jpg",
-      "w": 512,
-      "h": 512
-    },
-    {
-      "id": 4,
-      "url": "img4.jpg",
-      "w": 512,
-      "h": 512
-    },
-    {
-      "id": 5,
-      "url": "img5.jpg",
+      "url": "biere.jpg",
       "w": 512,
       "h": 512
     }

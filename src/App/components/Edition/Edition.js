@@ -19,7 +19,12 @@ const Edition = (props) => {
   <div className={styles.Edition} data-testid="Edition">
   {JSON.stringify(imgs)}
     <div style={{ textAlign: 'center' }}>Image :<br />
-      <select value={props.meme.imgId} onChange={(evt)=>(props.onChangeMeme({...props.meme, imgId:Number(evt.target.value)}))}>
+      <select value={props.meme.imgId} onChange={(evt)=>{
+        const idImageSelected = Number(evt.target.value);
+        const imgFound = imgs.find((elementImage)=>elementImage.id===idImageSelected);
+        props.onChangeMeme({...props.meme, imgId:idImageSelected, img:imgFound})
+        
+        }}>
         {imgs.map((elem,index)=>{
           return <option value={elem.id} key={`img-${index}`}>{elem.url}</option>
         })}
@@ -65,7 +70,7 @@ const Edition = (props) => {
 )};
 
 Edition.propTypes = {
-  meme:PropTypes/object.isRequired,
+  meme:PropTypes.object.isRequired,
   onChangeMeme:PropTypes.func.isRequired
 };
 

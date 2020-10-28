@@ -14,7 +14,7 @@ const REST_SRV_ADR = 'http://localhost:5644';
 
 const initialState = {
   meme: {
-    img: 1,
+    imgId: 3,img :{ id: 3, url: "biere.jpg", w: 512, h: 512 },
     text: { x: 20, y: 50, value: 'DEMAT BREIZH' },
   }
 }
@@ -54,7 +54,12 @@ class App extends Component {
           <Navbar></Navbar>
           <MainView>
             <Viewer meme={this.state.meme}></Viewer>
-            <Edition meme={this.state.meme} onChangeMeme={(meme) => { this.setState({ meme: meme }) }}></Edition>
+            <Edition meme={this.state.meme} onChangeMeme={
+              
+              (memeiN) => { this.setState({ meme: memeiN }) }
+              
+              }
+              ></Edition>
           </MainView>
           <Footer></Footer>
         </div>
